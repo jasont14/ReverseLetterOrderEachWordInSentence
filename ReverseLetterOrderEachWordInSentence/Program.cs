@@ -49,7 +49,7 @@ namespace ReverseLetterOrderEachWordInSentence
                     }
 
                     //add space back in
-                    b += " ";
+                   b += " ";
                                         
                     resume = i;                                   
                                       
@@ -59,12 +59,13 @@ namespace ReverseLetterOrderEachWordInSentence
             }
 
             //add punc back in at appropriate location
-            foreach (int p in specials)
-            {
-                b = b.Insert(p, Convert.ToString(a[p]));
-            }
 
-            Console.WriteLine("With letter order reversed: " + b);
+            for(int d = 0;  d<specials.Count; d++)
+            {
+                b = b.Insert(specials[d], a[specials[d]].ToString());
+            }
+           
+            Console.WriteLine("With letter order reversed: " + b);            
         }      
     }
 }
