@@ -1,8 +1,16 @@
-﻿using System;
+﻿/* ReverseLetterOrderEachWordInSentence.cs           Jason Thatcher
+ *                                                   December 2017
+ * 
+ * Prompts user to input sentence(s) and the program 
+ * will reverse the letters in each word while maintaining 
+ * the word order and punctuation. 
+ * 
+ * C#, Array, List<>, Loop, Conditional Expressions, Comments
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ReverseLetterOrderEachWordInSentence
 {
