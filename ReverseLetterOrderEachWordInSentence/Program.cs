@@ -71,7 +71,7 @@ namespace ReverseLetterOrderEachWordInSentence
                 b = b.Insert(specials[d], a[specials[d]].ToString());
             }
             
-            Console.WriteLine("With letter order reversed: " + b);            
+            Console.WriteLine("\nWith letter order reversed: \n\n" + b);            
         }      
     }
 }
