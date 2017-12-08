@@ -28,8 +28,7 @@ namespace ReverseLetterOrderEachWordInSentence
 
             for (int i = 0; i<a.Length; i++)
             {               
-                //Assume space follows each word.
-                
+                //Assume space follows each word.                
                 if (c == a[i] | i == a.Length-1) //look for a space in the sentence or end of sentence.
 
                 {
@@ -38,33 +37,32 @@ namespace ReverseLetterOrderEachWordInSentence
                     for (int k=i; k>resume-1; k--)  //Loop through current word to reverse letters and maintain punctuation
                     {
 
-                        if (punctuation.Contains(a[k]))  //Punctuation?: Is the char found in punctuation array?  Save Char and sentence position so we can reinsert in proper position.
+                        if (punctuation.Contains(a[k]))  //Punctuation?: Is the char found in punctuation array?  Save Char and sentence position to reinsert later in proper position.
                         {
                             specials.Add(k);
                         }
                         else if (c != a[k])
                         {
-                            b += a[k];  //If not add characters to string in reverse order.
+                            b += a[k];  //Reverse order.
                         }
                     }
 
-                    //add space back in
+                    //add space back in following word
                    b += " ";
                                         
                     resume = i;                                   
-                                      
-                    //find next character that is not a space.  Set resume location.
                     
                 }                
             }
 
-            //add punc back in at appropriate location
+            //add punc back in at appropriate location.  
+            specials.Sort(); //String with lot of punctuation fails as it tries to fill.  Need to sort to fill back in starting at beginning.
 
             for(int d = 0;  d<specials.Count; d++)
             {
                 b = b.Insert(specials[d], a[specials[d]].ToString());
             }
-           
+            
             Console.WriteLine("With letter order reversed: " + b);            
         }      
     }
